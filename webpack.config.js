@@ -12,7 +12,7 @@ function getBaseConfig () {
       'index': path.resolve('src', 'app.js')
     },
     output: {
-      path: 'dist',
+      path: path.resolve('dist'),
     },
     module: {
       rules: [
