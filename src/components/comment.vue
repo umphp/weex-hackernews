@@ -5,9 +5,9 @@
 
     <div class="text-group" :style="{ marginLeft: indent }">
       <text class="text-cell small-text">by&nbsp;</text>
-      <div class="text-cell" @click="jump(`/user/${comment.by}`)">
+      <router-link class="text-cell" :to="'/user/' + comment.by">
         <text class="small-text link">{{comment.by}}</text>
-      </div>
+      </router-link>
       <text class="text-cell small-text"> | {{ comment.time | timeAgo }} ago</text>
       <text class="text-cell small-text">{{ collapsed ? '  (collapsed)' : '' }}</text>
     </div>

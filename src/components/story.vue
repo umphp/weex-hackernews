@@ -7,14 +7,14 @@
     </external-link>
     <div class="text-group">
       <text class="small-text text-cell">by </text>
-      <div class="text-cell" @click="jump(`/user/${story.by}`)">
+      <router-link class="text-cell" :to="'/user/' + story.by">
         <text class="small-text link-text">{{story.by}}</text>
-      </div>
+      </router-link>
       <text class="small-text text-cell"> | {{ story.time | timeAgo }} ago</text>
       <text class="small-text text-cell" v-if="!noComment"> | </text>
-      <div class="text-cell" @click="jump(`/item/${story.id}`)" v-if="!noComment">
+      <router-link class="text-cell" :to="'/item/' + story.id" v-if="!noComment">
         <text class="small-text link-text">{{ story.descendants }} comments</text>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>

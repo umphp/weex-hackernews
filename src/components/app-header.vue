@@ -1,24 +1,24 @@
 <template>
   <div class="header">
-    <div class="logo" @click="jump('/')">
+    <router-link class="logo" to="/">
       <image class="image" src="https://news.ycombinator.com/favicon.ico"></image>
-    </div>
+    </router-link>
     <div class="nav">
-      <div class="link" @click="jump('/top')">
+      <router-link to="/top">
         <text class="title">Top</text>
-      </div>
-      <div class="link" @click="jump('/new')">
+      </router-link>
+      <router-link to="/new">
         <text class="title">New</text>
-      </div>
-      <div class="link" @click="jump('/show')">
+      </router-link>
+      <router-link to="/show">
         <text class="title">Show</text>
-      </div>
-      <div class="link" @click="jump('/ask')">
+      </router-link>
+      <router-link to="ask">
         <text class="title">Ask</text>
-      </div>
-      <div class="link" @click="jump('/job')">
+      </router-link>
+      <router-link to="/job">
         <text class="title">Job</text>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -57,11 +57,12 @@
     justify-content: flex-start;
     align-items: center;
   }
-  .link {
-    padding-left: 15px;
-    padding-right: 15px;
+  .router-link-active {
+    color: #FF6600;
+    background-color: #fff;
   }
   .title {
+    padding: 0 15px;
     font-family: Verdana, Geneva, sans-serif;
     font-size: 32px;
     line-height: 44px;

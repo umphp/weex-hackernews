@@ -1,7 +1,9 @@
 <template>
   <div>
     <web class="webview" :src="url | https"></web>
-    <text class="fixed-button" @click="jump(`/`)">back</text>
+    <router-link to="/">
+      <text class="fixed-button">back</text>
+    </router-link>
   </div>
 </template>
 
