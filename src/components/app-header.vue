@@ -13,7 +13,7 @@
       <router-link to="/show">
         <text class="title">Show</text>
       </router-link>
-      <router-link to="ask">
+      <router-link to="/ask">
         <text class="title">Ask</text>
       </router-link>
       <router-link to="/job">
