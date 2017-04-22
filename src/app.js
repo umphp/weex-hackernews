@@ -21,6 +21,9 @@ Vue.mixin(mixins)
 // create the app instance.
 // here we inject the router and store to all child components,
 // making them available everywhere as `this.$router` and `this.$store`.
-new Vue(Vue.util.extend({ el: '#app', router, store }, App))
-
-router.push('/')
+new Vue({
+  el: '#app',
+  router,
+  store,
+  render: h => h(App)
+})
