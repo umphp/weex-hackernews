@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.3'
+        classpath files('license/license-gradle-plugin-0.12.1.jar')
+        classpath files('license/maven-license-plugin-1.10.b1.jar')
+        classpath files('license/plexus-utils-3.0.24.jar')
+        classpath 'com.vanniktech:gradle-android-junit-jacoco-plugin:0.5.0'
+    }
+}
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+    defaultConfig {
+        applicationId "com.example.weex.hackernews"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 2
+        versionName "1.0.2"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null) {
+                def suffix = ".apk"
+                if (outputFile.name.endsWith("-debug.apk")) {
+                    suffix = "-debug.apk"
+                } else if (outputFile.name.endsWith("-release.apk")) {
+                    suffix = "-release.apk"
+                }
+                def fileName = "HackerNews-v" + defaultConfig.versionName + suffix
+                output.outputFile = new File(outputFile.parent, fileName)
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile 'com.android.support:recyclerview-v7:24.1.1'
+    compile 'com.android.support:support-v4:24.1.1'
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile 'com.alibaba:fastjson:1.1.46.android'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    //compile project(':weex_sdk')
+    compile 'com.taobao.android:weex_sdk:0.10.0'
+    testCompile 'junit:junit:4.12'
+}
