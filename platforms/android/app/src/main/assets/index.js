@@ -5143,12 +5143,8 @@ module.exports = {
     "top": 35,
     "flexDirection": "row",
     "flexWrap": "nowrap",
-    "justifyContent": "flex-start",
+    "justifyContent": "center",
     "alignItems": "center"
-  },
-  "router-link-active": {
-    "color": "#FF6600",
-    "backgroundColor": "#ffffff"
   },
   "title": {
     "fontFamily": "Verdana, Geneva, sans-serif",
@@ -5434,35 +5430,50 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["nav"]
   }, [_c('router-link', {
     attrs: {
-      "to": "/top"
+      "to": "/top",
+      "tag": "li"
     }
+  }, [_c('a', {
+    staticClass: ["link-header"]
   }, [_c('text', {
     staticClass: ["title"]
-  }, [_vm._v("Top")])]), _c('router-link', {
+  }, [_vm._v("Top")])])], 1), _c('router-link', {
     attrs: {
-      "to": "/new"
+      "to": "/new",
+      "tag": "li"
     }
+  }, [_c('a', {
+    staticClass: ["link-header"]
   }, [_c('text', {
     staticClass: ["title"]
-  }, [_vm._v("New")])]), _c('router-link', {
+  }, [_vm._v("New")])])], 1), _c('router-link', {
     attrs: {
-      "to": "/show"
+      "to": "/show",
+      "tag": "li"
     }
+  }, [_c('a', {
+    staticClass: ["link-header"]
   }, [_c('text', {
     staticClass: ["title"]
-  }, [_vm._v("Show")])]), _c('router-link', {
+  }, [_vm._v("Show")])])], 1), _c('router-link', {
     attrs: {
-      "to": "/ask"
+      "to": "/ask",
+      "tag": "li"
     }
+  }, [_c('a', {
+    staticClass: ["link-header"]
   }, [_c('text', {
     staticClass: ["title"]
-  }, [_vm._v("Ask")])]), _c('router-link', {
+  }, [_vm._v("Ask")])])], 1), _c('router-link', {
     attrs: {
-      "to": "/job"
+      "to": "/job",
+      "tag": "li"
     }
+  }, [_c('a', {
+    staticClass: ["link-header"]
   }, [_c('text', {
     staticClass: ["title"]
-  }, [_vm._v("Job")])])], 1)], 1)
+  }, [_vm._v("Job")])])], 1)], 1)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

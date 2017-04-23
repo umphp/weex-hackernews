@@ -4,20 +4,20 @@
       <image class="image" src="https://news.ycombinator.com/favicon.ico"></image>
     </router-link>
     <div class="nav">
-      <router-link to="/top">
-        <text class="title">Top</text>
+      <router-link to="/top" tag="li">
+        <a class="link-header"><text class="title">Top</text></a>
       </router-link>
-      <router-link to="/new">
-        <text class="title">New</text>
+      <router-link to="/new" tag="li">
+        <a class="link-header"><text class="title">New</text></a>
       </router-link>
-      <router-link to="/show">
-        <text class="title">Show</text>
+      <router-link to="/show" tag="li">
+        <a class="link-header"><text class="title">Show</text></a>
       </router-link>
-      <router-link to="/ask">
-        <text class="title">Ask</text>
+      <router-link to="/ask" tag="li">
+        <a class="link-header"><text class="title">Ask</text></a>
       </router-link>
-      <router-link to="/job">
-        <text class="title">Job</text>
+      <router-link to="/job" tag="li">
+        <a class="link-header"><text class="title">Job</text></a>
       </router-link>
     </div>
   </div>
@@ -54,15 +54,13 @@
     top: 35px;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
   }
-  .router-link-active {
-    color: #FF6600;
-    background-color: #fff;
+  .link-header {
+    padding: 0 15px;
   }
   .title {
-    padding: 0 15px;
     font-family: Verdana, Geneva, sans-serif;
     font-size: 32px;
     line-height: 44px;
